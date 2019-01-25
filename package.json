@@ -1,0 +1,46 @@
+{
+  "name": "@thejohnfreeman/async-component",
+  "version": "1.0.0",
+  "description": "Like react-loadable, but better.",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "lint": "tsc --noEmit && tslint --project tsconfig.json 'src/**/*.{ts,tsx}'",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thejohnfreeman/async-component.git"
+  },
+  "keywords": [
+    "react",
+    "async",
+    "higher",
+    "order",
+    "component",
+    "hoc",
+    "loadable"
+  ],
+  "author": "John Freeman <jfreeman08@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thejohnfreeman/async-component/issues"
+  },
+  "homepage": "https://github.com/thejohnfreeman/async-component#readme",
+  "devDependencies": {
+    "@types/jest": "^23.3.10",
+    "@types/react": "^16.6.3",
+    "jest": "^23.6.0",
+    "jest-dom": "^3.0.0",
+    "lolex": "^3.0.0",
+    "prettier": "^1.16.1",
+    "react-testing-library": "^5.3.1",
+    "ts-jest": "^23.10.5",
+    "typescript": "^3.2.1"
+  },
+  "dependencies": {
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  }
+}

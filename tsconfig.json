@@ -1,0 +1,42 @@
+// http://www.typescriptlang.org/docs/handbook/compiler-options.html
+{
+  "compilerOptions": {
+    // Let us import from modules with no default import.
+    "allowSyntheticDefaultImports": true,
+    // Let us use path aliases.
+    "baseUrl": "./",
+    // https://medium.com/cameron-nokes/the-30-second-guide-to-publishing-a-typescript-package-to-npm-89d93ff7bccd
+    "declaration": true,
+    // Let us use yield*.
+    "downlevelIteration": true,
+    // Required for ts-jest.
+    // https://github.com/kulshekhar/ts-jest/issues/258
+    "esModuleInterop": true,
+    // Let us use fancy MobX decorators, e.g. @observable.
+    "experimentalDecorators": true,
+    // Compile JSX too.
+    "jsx": "react",
+    // Declare global variables from ES2017 and the DOM.
+    "lib": ["es2017", "dom"],
+    // Generate a CommonJS module for Webpack.
+    "module": "esnext",
+    // Resolve dependencies like Node.js.
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "dist",
+    "removeComments": true,
+    // Attach inline source maps.
+    "sourceMap": true,
+    // Suppress noImplicitAny errors when indexing.
+    "suppressImplicitAnyIndexErrors": true,
+    // Enable a group of strictness checks.
+    // "strict": true,
+    "strictNullChecks": true,
+    // Generate ES5.
+    "target": "es5"
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

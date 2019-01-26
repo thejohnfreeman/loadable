@@ -4,18 +4,18 @@ type FirstArgument<T> = T extends (arg1: infer U, ...args: any[]) => any
   ? U
   : never
 
-const _Loading = () => <>Loading...</>
+const Loading = () => <>Loading...</>
 
 type LoadableOptions = {
   delay?: number
-  Loading?: React.ComponentType
+  Placeholder?: React.ComponentType
 }
 
 // `fetchElement` is an async function that takes props and returns
 // a `Promise<JSX.Element>`.
 export const loadable = ({
   delay = 200,
-  Loading = _Loading,
+  Placeholder = Loading,
 }: LoadableOptions = {}) => <F extends (props: any) => Promise<JSX.Element>>(
   fetchElement: F,
 ): React.ComponentType<FirstArgument<F>> => {
@@ -39,7 +39,7 @@ export const loadable = ({
           if (this.state.element) {
             console.error('timer was not cleared when element loaded')
           } else {
-            this.setState({ element: <Loading {...this.props} /> })
+            this.setState({ element: <Placeholder {...this.props} /> })
             // console.log('timer expired')
           }
         },

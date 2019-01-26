@@ -1,5 +1,5 @@
 {
-  "name": "@thejohnfreeman/async-component",
+  "name": "@thejohnfreeman/loadable",
   "version": "1.0.0",
   "description": "Like react-loadable, but better.",
   "types": "dist/index.d.ts",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thejohnfreeman/async-component.git"
+    "url": "git+https://github.com/thejohnfreeman/loadable.git"
   },
   "keywords": [
     "react",
@@ -25,9 +25,9 @@
   "author": "John Freeman <jfreeman08@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/thejohnfreeman/async-component/issues"
+    "url": "https://github.com/thejohnfreeman/loadable/issues"
   },
-  "homepage": "https://github.com/thejohnfreeman/async-component#readme",
+  "homepage": "https://github.com/thejohnfreeman/loadable#readme",
   "devDependencies": {
     "@types/jest": "^23.3.10",
     "@types/react": "^16.6.3",

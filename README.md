@@ -30,3 +30,45 @@ that](https://www.smooth-code.com/open-source/loadable-components/docs/dynamic-i
 What I want now is to pass an async function that takes the props and returns
 an element, not just the component type. Then I can use it for fetching
 resources, not just for code-splitting.
+
+
+## Usage
+
+[Code splitting](https://developers.google.com/web/fundamentals/performance/optimizing-javascript/code-splitting/):
+
+```typescript
+import loadable from '@thejohnfreeman/loadable'
+const Proxy = loadable()(() => import('./Target'))
+// <Proxy />
+```
+
+Resource loading:
+
+```typescript
+import loadable from '@thejohnfreeman/loadable'
+const AsyncProduct = loadable()(async ({ productId }) => {
+  try {
+    const product = await backend.getProduct(productId)
+  } catch (error) {
+    return <Error error={error} />
+  }
+  return <Product product={product} />
+})
+// <AsyncProduct productId={productId} />
+```
+
+## Options
+
+Options are passed to the call to `loadable`, not to the function it returns,
+which takes the `load` function.
+
+- `delay :: number`
+
+  Number of milliseconds to wait before showing the placeholder (to avoid
+  a flicker of content). The default is 200.
+
+- `Placeholder :: React.ComponentType`
+
+  The placeholder component type to show while waiting for the target. It will
+  be given the same props as the target, in case you want to make use of them.
+  The default is the text "Loading...".

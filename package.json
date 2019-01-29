@@ -9,6 +9,12 @@
     "lint": "tsc --noEmit && tslint --project tsconfig.json 'src/**/*.{ts,tsx}'",
     "test": "jest"
   },
+  "jest": {
+    "preset": "ts-jest",
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/jest.setup.ts"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thejohnfreeman/loadable.git"
@@ -31,7 +37,7 @@
   "devDependencies": {
     "@types/jest": "^23.3.10",
     "@types/react": "^16.6.3",
-    "jest": "^23.6.0",
+    "jest": "^24.0.0",
     "jest-dom": "^3.0.0",
     "lolex": "^3.0.0",
     "prettier": "^1.16.1",

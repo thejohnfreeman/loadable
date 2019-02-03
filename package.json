@@ -42,7 +42,7 @@
   "homepage": "https://github.com/thejohnfreeman/loadable#readme",
   "devDependencies": {
     "@types/jest": "^23.3.10",
-    "@types/lolex": "https://github.com/thejohnfreeman/types-lolex.git#master",
+    "@types/lolex": "thejohnfreeman/types-lolex#master",
     "@types/react": "^16.6.3",
     "jest": "^24.0.0",
     "jest-dom": "^3.0.0",

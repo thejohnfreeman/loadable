@@ -16,7 +16,9 @@ type LoadableOptions = {
 export const loadable = ({
   delay = 200,
   Placeholder = Loading,
-}: LoadableOptions = {}) => <F extends (props: any) => Promise<JSX.Element>>(
+}: LoadableOptions = {}) => <
+  F extends (props: any) => Promise<React.ReactNode>
+>(
   fetchElement: F,
 ): React.ComponentType<FirstArgument<F>> => {
   class Loadable extends React.Component<FirstArgument<F>> {

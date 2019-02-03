@@ -6,7 +6,9 @@
     // Let us use path aliases.
     "baseUrl": "./",
     // https://medium.com/cameron-nokes/the-30-second-guide-to-publishing-a-typescript-package-to-npm-89d93ff7bccd
+    // https://hackernoon.com/building-and-publishing-a-module-with-typescript-and-rollup-js-faa778c85396
     "declaration": true,
+    "declarationDir": "dist",
     // Let us use yield*.
     "downlevelIteration": true,
     // Required for ts-jest.
@@ -19,7 +21,7 @@
     // Declare global variables from ES2017 and the DOM.
     "lib": ["es2017", "dom"],
     // Generate a CommonJS module for Webpack.
-    "module": "esnext",
+    "module": "es2015",
     // Resolve dependencies like Node.js.
     "moduleResolution": "node",
     "noUnusedLocals": true,
@@ -31,8 +33,7 @@
     // Suppress noImplicitAny errors when indexing.
     "suppressImplicitAnyIndexErrors": true,
     // Enable a group of strictness checks.
-    // "strict": true,
-    "strictNullChecks": true,
+    "strict": true,
     // Generate ES5.
     "target": "es5"
   },

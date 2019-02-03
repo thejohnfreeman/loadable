@@ -4,11 +4,15 @@ import { render } from 'react-testing-library'
 
 import { loadable } from '.'
 
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
+const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 
 const sleepForever: Promise<any> = new Promise(() => {})
 
-const AsyncChildren = async ({ children }) => {
+const AsyncChildren = async ({
+  children,
+}: {
+  children?: React.ReactNode
+}): Promise<React.ReactNode> => {
   await sleep(1000)
   return children
 }

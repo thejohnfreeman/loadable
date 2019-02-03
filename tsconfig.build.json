@@ -1,5 +1,0 @@
-// http://www.typescriptlang.org/docs/handbook/compiler-options.html
-{
-  "extends": "./tsconfig.json",
-  "files": ["src/index.tsx"]
-}

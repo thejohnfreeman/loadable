@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  // Do not build our tests.
+  "files": ["src/index.tsx"],
+  "compilerOptions": {
+    // Generate an ES2015 module for Rollup.
+    "module": "es2015",
+    "outDir": "dist/es"
+  }
+}

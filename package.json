@@ -5,13 +5,12 @@
   "types": "dist/index.d.ts",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "build:cjs": "tsc --project tsconfig.commonjs.json",
     "build:es": "tsc --project tsconfig.es2015.json",
     "build": "npm run build:cjs && npm run build:es",
+    "prepack": "npm run build",
     "lint": "tsc --noEmit && tslint --project tsconfig.json 'src/**/*.{ts,tsx}'",
     "test": "jest"
   },

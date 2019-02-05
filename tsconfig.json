@@ -25,7 +25,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "removeComments": true,
-    // Attach inline source maps.
+    // Emit separate source maps.
     "sourceMap": true,
     // Suppress noImplicitAny errors when indexing.
     "suppressImplicitAnyIndexErrors": true,

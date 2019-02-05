@@ -1,11 +1,13 @@
 {
   "name": "@thejohnfreeman/loadable",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Like react-loadable, but better.",
   "types": "dist/index.d.ts",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build:cjs": "tsc --project tsconfig.commonjs.json",
     "build:es": "tsc --project tsconfig.es2015.json",

@@ -12,8 +12,8 @@
     "build:cjs": "tsc --project tsconfig.commonjs.json",
     "build:es": "tsc --project tsconfig.es2015.json",
     "build": "npm run build:cjs && npm run build:es",
-    "prepack": "npm run build",
     "lint": "tsc --noEmit && tslint --project tsconfig.json 'src/**/*.{ts,tsx}'",
+    "prepack": "npm run build",
     "test": "jest"
   },
   "jest": {

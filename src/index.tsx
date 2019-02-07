@@ -11,13 +11,33 @@ type LoadableOptions = {
   Placeholder?: React.ComponentType
 }
 
+type Imported<P> =
+  | React.ReactNode
+  | React.ComponentType<P>
+  | { default: Imported<P> }
+
+function elementFromImported<P extends object>(
+  props: P,
+  imported: Imported<P>,
+): React.ReactNode {
+  if (imported instanceof Function || imported instanceof React.Component) {
+    const Component = imported as React.ComponentType<P>
+    return <Component {...props} />
+  }
+  if (imported && typeof imported === 'object' && 'default' in imported) {
+    return elementFromImported(props, imported.default)
+  }
+  return imported
+}
+
 // `fetchElement` is an async function that takes props and returns
 // a `Promise<JSX.Element>`.
 export const loadable = ({
   delay = 200,
   Placeholder = Loading,
 }: LoadableOptions = {}) => <
-  F extends (props: any) => Promise<React.ReactNode>
+  P extends object,
+  F extends (props: P) => Promise<Imported<P>>
 >(
   fetchElement: F,
 ): React.ComponentType<FirstArgument<F>> => {
@@ -27,7 +47,8 @@ export const loadable = ({
     private timer: any = null
 
     public componentDidMount() {
-      fetchElement(this.props).then(element => {
+      fetchElement(this.props).then(imported => {
+        const element = elementFromImported(this.props, imported)
         this.clearTimeout()
         this.setState({ element })
         // console.log('element loaded')

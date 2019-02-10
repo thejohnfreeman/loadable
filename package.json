@@ -51,8 +51,7 @@
     "react-testing-library": "^5.3.1",
     "ts-jest": "^23.10.5",
     "tslint": "^5.12.1",
-    "tslint-config-prettier": "^1.17.0",
-    "tslint-react": "^3.6.0",
+    "tslint-config-thejohnfreeman": "^1.0.1",
     "typescript": "^3.2.1"
   },
   "peerDependencies": {
